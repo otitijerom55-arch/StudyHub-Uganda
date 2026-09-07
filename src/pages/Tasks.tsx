@@ -12,12 +12,14 @@ interface Task {
 }
 
 const initialTasks: Task[] = [
-  { id: 1, title: 'Complete Calculus Problem Set #7', subject: 'Mathematics', priority: 'high', dueDate: '2026-01-20', completed: false },
-  { id: 2, title: 'Read Chapter 12 - Organic Chemistry', subject: 'Chemistry', priority: 'medium', dueDate: '2026-01-21', completed: false },
-  { id: 3, title: 'Write Essay Outline - Civil Rights', subject: 'History', priority: 'medium', dueDate: '2026-01-22', completed: false },
-  { id: 4, title: 'Review Flashcards for Biology', subject: 'Biology', priority: 'low', dueDate: '2026-01-23', completed: true },
-  { id: 5, title: 'Submit Lab Report', subject: 'Physics', priority: 'high', dueDate: '2026-01-19', completed: true },
-  { id: 6, title: 'Prepare for CS midterm', subject: 'Computer Science', priority: 'high', dueDate: '2026-01-25', completed: false },
+  { id: 1, title: 'UNEB Maths Paper 2 - Practice Questions 1-10', subject: 'Mathematics', priority: 'high', dueDate: '2026-03-20', completed: false },
+  { id: 2, title: 'Read Organic Chemistry - Alkanes & Alkenes', subject: 'Chemistry', priority: 'medium', dueDate: '2026-03-21', completed: false },
+  { id: 3, title: 'Essay: History of East African Community', subject: 'History', priority: 'medium', dueDate: '2026-03-22', completed: false },
+  { id: 4, title: 'Biology Flashcards - Genetics & Heredity', subject: 'Biology', priority: 'low', dueDate: '2026-03-23', completed: true },
+  { id: 5, title: 'Physics Lab Report - Mechanics (UNEB 2024)', subject: 'Physics', priority: 'high', dueDate: '2026-03-19', completed: true },
+  { id: 6, title: 'Computer Studies - Programming Assignment', subject: 'Computer Studies', priority: 'high', dueDate: '2026-03-25', completed: false },
+  { id: 7, title: 'English - Comprehension Practice (UNEB style)', subject: 'English', priority: 'medium', dueDate: '2026-03-24', completed: false },
+  { id: 8, title: 'Geography - Map Reading Exercises', subject: 'Geography', priority: 'low', dueDate: '2026-03-26', completed: false },
 ];
 
 const priorityColors = {

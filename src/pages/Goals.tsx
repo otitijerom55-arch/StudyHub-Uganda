@@ -16,66 +16,67 @@ interface Goal {
 const initialGoals: Goal[] = [
   {
     id: 1,
-    title: 'Read 20 books this semester',
+    title: 'Score Distinction in UNEB UCE Exams',
     category: 'Academic',
-    target: 20,
-    current: 12,
-    unit: 'books',
-    deadline: '2026-05-30',
+    target: 100,
+    current: 72,
+    unit: '% readiness',
+    deadline: '2026-11-30',
     milestones: [
-      { label: '5 books', completed: true },
-      { label: '10 books', completed: true },
-      { label: '15 books', completed: false },
-      { label: '20 books', completed: false },
+      { label: '25% readiness', completed: true },
+      { label: '50% readiness', completed: true },
+      { label: '75% readiness', completed: false },
+      { label: '100% readiness', completed: false },
     ],
   },
   {
     id: 2,
-    title: 'Maintain 3.8+ GPA',
-    category: 'Academic',
-    target: 3.8,
-    current: 3.6,
-    unit: 'GPA',
-    deadline: '2026-06-15',
+    title: 'Complete 50 past UNEB papers',
+    category: 'Study Time',
+    target: 50,
+    current: 28,
+    unit: 'papers',
+    deadline: '2026-10-15',
     milestones: [
-      { label: '3.0 GPA', completed: true },
-      { label: '3.4 GPA', completed: true },
-      { label: '3.6 GPA', completed: true },
-      { label: '3.8 GPA', completed: false },
+      { label: '10 papers', completed: true },
+      { label: '25 papers', completed: true },
+      { label: '40 papers', completed: false },
+      { label: '50 papers', completed: false },
     ],
   },
   {
     id: 3,
-    title: 'Study 200 hours this semester',
+    title: 'Study 300 hours this term',
     category: 'Study Time',
-    target: 200,
-    current: 145,
+    target: 300,
+    current: 185,
     unit: 'hours',
-    deadline: '2026-05-30',
+    deadline: '2026-08-30',
     milestones: [
-      { label: '50 hours', completed: true },
-      { label: '100 hours', completed: true },
-      { label: '150 hours', completed: false },
-      { label: '200 hours', completed: false },
+      { label: '75 hours', completed: true },
+      { label: '150 hours', completed: true },
+      { label: '225 hours', completed: false },
+      { label: '300 hours', completed: false },
     ],
   },
   {
     id: 4,
-    title: 'Complete 3 online certifications',
+    title: 'Earn a scholarship to Makerere University',
     category: 'Career',
-    target: 3,
-    current: 1,
-    unit: 'certifications',
-    deadline: '2026-08-01',
+    target: 5,
+    current: 2,
+    unit: 'applications',
+    deadline: '2026-12-31',
     milestones: [
-      { label: '1 certification', completed: true },
-      { label: '2 certifications', completed: false },
-      { label: '3 certifications', completed: false },
+      { label: '1 application', completed: true },
+      { label: '2 applications', completed: true },
+      { label: '3 applications', completed: false },
+      { label: '5 applications', completed: false },
     ],
   },
 ];
 
-const categories = ['All', 'Academic', 'Study Time', 'Career', 'Personal'];
+const categories = ['All', 'Academic', 'Study Time', 'Career', 'UNEB Prep'];
 
 export default function Goals() {
   const [goals, setGoals] = useState<Goal[]>(initialGoals);
@@ -202,7 +203,7 @@ export default function Goals() {
                 <option value="Academic">Academic</option>
                 <option value="Study Time">Study Time</option>
                 <option value="Career">Career</option>
-                <option value="Personal">Personal</option>
+                <option value="UNEB Prep">UNEB Prep</option>
               </select>
               <input
                 type="number"

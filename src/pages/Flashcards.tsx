@@ -10,12 +10,16 @@ interface Flashcard {
 }
 
 const initialCards: Flashcard[] = [
-  { id: 1, front: 'What is the derivative of sin(x)?', back: 'cos(x)', subject: 'Mathematics' },
-  { id: 2, front: 'Define photosynthesis', back: 'The process by which plants convert light energy into chemical energy (glucose) using CO₂ and water.', subject: 'Biology' },
-  { id: 3, front: 'What year did World War II end?', back: '1945', subject: 'History' },
-  { id: 4, front: 'What is Newton\'s Second Law?', back: 'F = ma (Force equals mass times acceleration)', subject: 'Physics' },
-  { id: 5, front: 'What is the Big O of binary search?', back: 'O(log n)', subject: 'Computer Science' },
-  { id: 6, front: 'Who wrote "Hamlet"?', back: 'William Shakespeare', subject: 'Literature' },
+  { id: 1, front: 'What is the derivative of sin(x)?', back: 'cos(x) — a key UNEB Mathematics concept', subject: 'Mathematics' },
+  { id: 2, front: 'Define photosynthesis', back: 'The process by which plants convert light energy into chemical energy (glucose) using CO₂ and water. 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂', subject: 'Biology' },
+  { id: 3, front: 'When did Uganda gain independence?', back: 'October 9, 1962 — from British colonial rule', subject: 'History' },
+  { id: 4, front: 'State Newton\'s Second Law of Motion', back: 'F = ma (Force equals mass times acceleration). Essential for UNEB Physics Paper 1.', subject: 'Physics' },
+  { id: 5, front: 'What is the capital city of Uganda?', back: 'Kampala — located in the central region of Uganda', subject: 'Geography' },
+  { id: 6, front: 'Who wrote "A Grain of Wheat"?', back: 'Ngũgĩ wa Thiong\'o — important East African literature for UNEB', subject: 'Literature' },
+  { id: 7, front: 'What is the chemical formula for sulfuric acid?', back: 'H₂SO₄ — a strong acid commonly tested in UNEB Chemistry', subject: 'Chemistry' },
+  { id: 8, front: 'Translate "Hello, how are you?" to Luganda', back: '"Oli otya?" or "Owebale" (formal greeting)', subject: 'Kiswahili' },
+  { id: 9, front: 'What is Ohm\'s Law?', back: 'V = IR (Voltage = Current × Resistance)', subject: 'Physics' },
+  { id: 10, front: 'Name the longest river in Uganda', back: 'The Nile River — specifically the White Nile flows through Uganda from Lake Victoria', subject: 'Geography' },
 ];
 
 export default function Flashcards() {
