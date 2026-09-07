@@ -26,15 +26,15 @@ const wellnessTips = [
 ];
 
 const breathingExercises = [
-  { name: '4-7-8 Breathing', steps: 'Inhale 4s → Hold 7s → Exhale 8s', duration: '4 cycles' },
-  { name: 'Box Breathing', steps: 'Inhale 4s → Hold 4s → Exhale 4s → Hold 4s', duration: '5 minutes' },
-  { name: 'Deep Belly Breathing', steps: 'Slow deep breaths focusing on belly expansion', duration: '3 minutes' },
+  { name: '4-7-8 Breathing', steps: 'Inhale 4s → Hold 7s → Exhale 8s', duration: '4 cycles', link: 'https://www.drweil.com/health-nutrition/healthy-living/stress-relief/relaxation-techniques/4-7-8-breathing/' },
+  { name: 'Box Breathing', steps: 'Inhale 4s → Hold 4s → Exhale 4s → Hold 4s', duration: '5 minutes', link: 'https://www.healthline.com/health/box-breathing' },
+  { name: 'Deep Belly Breathing', steps: 'Slow deep breaths focusing on belly expansion', duration: '3 minutes', link: 'https://www.health.harvard.edu/mind-and-mood/relaxation-techniques-breath-control-helps-quell-rampant-stress-response' },
 ];
 
 const crisisResources = [
-  { name: 'Crisis Text Line', number: 'Text HOME to 741741', description: 'Free 24/7 crisis counseling' },
-  { name: 'Suicide Prevention Lifeline', number: '988', description: 'Call or text for immediate help' },
-  { name: 'SAMHSA Helpline', number: '1-800-662-4357', description: 'Mental health & substance abuse support' },
+  { name: 'Crisis Text Line', number: 'Text HOME to 741741', description: 'Free 24/7 crisis counseling', link: 'https://www.crisistextline.org', linkLabel: 'Chat Online' },
+  { name: 'Suicide Prevention Lifeline', number: '988', description: 'Call or text for immediate help', link: 'tel:988', linkLabel: 'Call Now' },
+  { name: 'SAMHSA Helpline', number: '1-800-662-4357', description: 'Mental health & substance abuse support', link: 'tel:1-800-662-4357', linkLabel: 'Call Now' },
 ];
 
 export default function Wellness() {
@@ -190,7 +190,18 @@ export default function Wellness() {
               >
                 <p className="text-sm font-medium text-gray-900">{exercise.name}</p>
                 <p className="text-xs text-gray-500 mt-1">{exercise.steps}</p>
-                <p className="text-xs text-purple-600 mt-1">Duration: {exercise.duration}</p>
+                <div className="flex items-center justify-between mt-2">
+                  <p className="text-xs text-purple-600">Duration: {exercise.duration}</p>
+                  <a
+                    href={exercise.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-purple-600 hover:text-purple-800 underline transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Learn more →
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -219,9 +230,81 @@ export default function Wellness() {
                 <p className="text-sm font-medium text-gray-900">{resource.name}</p>
               </div>
               <p className="text-sm font-bold text-red-600">{resource.number}</p>
-              <p className="text-xs text-gray-500 mt-1">{resource.description}</p>
+              <p className="text-xs text-gray-500 mt-1 mb-3">{resource.description}</p>
+              <a
+                href={resource.link}
+                target={resource.link.startsWith('tel:') ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-700 bg-red-50 px-3 py-1.5 rounded-lg transition-colors"
+              >
+                <Phone className="w-3 h-3" />
+                {resource.linkLabel}
+              </a>
             </div>
           ))}
+        </div>
+      </motion.div>
+
+      {/* Additional Wellness Resources */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="mt-6 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border border-teal-100"
+      >
+        <h2 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <BookHeart className="w-5 h-5 text-teal-500" />
+          More Wellness Resources
+        </h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <a
+            href="https://www.headspace.com/meditation-101"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-sm transition-all group"
+          >
+            <span className="text-2xl">🧘</span>
+            <div>
+              <p className="text-sm font-medium text-gray-900 group-hover:text-teal-700 transition-colors">Meditation Guide</p>
+              <p className="text-xs text-gray-500">Learn meditation basics with Headspace</p>
+            </div>
+          </a>
+          <a
+            href="https://www.sleepfoundation.org/students-and-sleep"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-sm transition-all group"
+          >
+            <span className="text-2xl">😴</span>
+            <div>
+              <p className="text-sm font-medium text-gray-900 group-hover:text-teal-700 transition-colors">Sleep for Students</p>
+              <p className="text-xs text-gray-500">Tips for better sleep habits</p>
+            </div>
+          </a>
+          <a
+            href="https://www.nimh.nih.gov/health/topics/student-mental-health"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-sm transition-all group"
+          >
+            <span className="text-2xl">🧠</span>
+            <div>
+              <p className="text-sm font-medium text-gray-900 group-hover:text-teal-700 transition-colors">Student Mental Health</p>
+              <p className="text-xs text-gray-500">NIMH resources for students</p>
+            </div>
+          </a>
+          <a
+            href="https://www.calm.com/blog/stress-relief-for-students"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-sm transition-all group"
+          >
+            <span className="text-2xl">💆</span>
+            <div>
+              <p className="text-sm font-medium text-gray-900 group-hover:text-teal-700 transition-colors">Stress Relief</p>
+              <p className="text-xs text-gray-500">Practical stress management techniques</p>
+            </div>
+          </a>
         </div>
       </motion.div>
     </div>

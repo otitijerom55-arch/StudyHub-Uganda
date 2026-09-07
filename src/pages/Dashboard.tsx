@@ -148,18 +148,22 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
           </h3>
           <div className="space-y-3">
             {[
-              { tip: 'Use spaced repetition for better long-term memory retention', tag: 'Memory' },
-              { tip: 'Take 5-minute breaks every 25 minutes to maintain focus', tag: 'Focus' },
-              { tip: 'Teach concepts to others to solidify your understanding', tag: 'Learning' },
-              { tip: 'Get 7-9 hours of sleep for optimal cognitive function', tag: 'Health' },
-              { tip: 'Mix up subjects during study sessions for better recall', tag: 'Strategy' },
+              { tip: 'Use spaced repetition for better long-term memory retention', tag: 'Memory', page: 'flashcards' as Page },
+              { tip: 'Take 5-minute breaks every 25 minutes to maintain focus', tag: 'Focus', page: 'pomodoro' as Page },
+              { tip: 'Track your study goals and celebrate milestones', tag: 'Goals', page: 'goals' as Page },
+              { tip: 'Take care of your mind and body for better performance', tag: 'Health', page: 'wellness' as Page },
+              { tip: 'Organize tasks by priority and deadline for efficiency', tag: 'Strategy', page: 'tasks' as Page },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full whitespace-nowrap">
+              <button
+                key={i}
+                onClick={() => onNavigate(item.page)}
+                className="flex items-start gap-3 p-3 rounded-xl hover:bg-indigo-50 transition-colors w-full text-left group"
+              >
+                <span className="text-xs font-medium text-indigo-600 bg-indigo-50 group-hover:bg-indigo-100 px-2 py-1 rounded-full whitespace-nowrap transition-colors">
                   {item.tag}
                 </span>
-                <p className="text-sm text-gray-600">{item.tip}</p>
-              </div>
+                <p className="text-sm text-gray-600 group-hover:text-indigo-700 transition-colors">{item.tip}</p>
+              </button>
             ))}
           </div>
         </motion.div>

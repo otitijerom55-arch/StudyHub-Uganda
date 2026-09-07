@@ -83,13 +83,26 @@ export default function Sidebar({ currentPage, onNavigate, isOpen, onClose }: Si
       </nav>
 
       {/* Bottom section */}
-      <div className="p-4 border-t border-gray-100">
-        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-4">
+      <div className="p-4 border-t border-gray-100 space-y-2">
+        <button
+          onClick={() => onNavigate('pomodoro')}
+          className="w-full bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-4 text-left hover:from-indigo-100 hover:to-purple-100 transition-colors"
+        >
           <p className="text-xs font-semibold text-indigo-700 mb-1">💡 Study Tip</p>
           <p className="text-xs text-gray-600">
             Use the Pomodoro technique: 25 min focus, 5 min break for optimal learning.
           </p>
-        </div>
+          <p className="text-xs text-indigo-500 mt-2 font-medium">Try it now →</p>
+        </button>
+        <a
+          href="https://www.coursera.org/articles/study-tips"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-3 text-left hover:from-green-100 hover:to-emerald-100 transition-colors"
+        >
+          <p className="text-xs font-semibold text-green-700">📚 More Study Tips</p>
+          <p className="text-xs text-gray-500 mt-0.5">Explore expert advice →</p>
+        </a>
       </div>
     </aside>
   );

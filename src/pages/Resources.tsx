@@ -14,18 +14,18 @@ interface Resource {
 }
 
 const initialResources: Resource[] = [
-  { id: 1, title: 'Khan Academy', description: 'Free world-class education in math, science, and more', category: 'Courses', tags: ['math', 'science', 'free'], url: '#', starred: true, type: 'course' },
-  { id: 2, title: 'MIT OpenCourseWare', description: 'Free lecture notes, exams, and videos from MIT', category: 'Courses', tags: ['engineering', 'science', 'university'], url: '#', starred: true, type: 'course' },
-  { id: 3, title: 'Wolfram Alpha', description: 'Computational intelligence for math and science problems', category: 'Tools', tags: ['math', 'calculator', 'problem-solving'], url: '#', starred: false, type: 'tool' },
-  { id: 4, title: 'CrashCourse', description: 'Engaging educational videos on various subjects', category: 'Videos', tags: ['history', 'science', 'literature'], url: '#', starred: false, type: 'video' },
-  { id: 5, title: 'Purdue OWL', description: 'Comprehensive writing and citation resources', category: 'Tools', tags: ['writing', 'citations', 'english'], url: '#', starred: true, type: 'tool' },
-  { id: 6, title: 'Coursera', description: 'Online courses from top universities worldwide', category: 'Courses', tags: ['various', 'certificates', 'university'], url: '#', starred: false, type: 'course' },
-  { id: 7, title: 'Quizlet', description: 'Create and study flashcards for any subject', category: 'Tools', tags: ['flashcards', 'memorization', 'study'], url: '#', starred: true, type: 'tool' },
-  { id: 8, title: 'Scholar Google', description: 'Search academic papers and articles', category: 'Research', tags: ['papers', 'academic', 'research'], url: '#', starred: false, type: 'article' },
-  { id: 9, title: 'Desmos', description: 'Advanced graphing calculator for mathematics', category: 'Tools', tags: ['math', 'graphing', 'visualization'], url: '#', starred: false, type: 'tool' },
-  { id: 10, title: 'edX', description: 'Free courses from Harvard, MIT, and 160+ institutions', category: 'Courses', tags: ['university', 'free', 'certificates'], url: '#', starred: false, type: 'course' },
-  { id: 11, title: 'Grammarly', description: 'AI-powered writing assistant for grammar and style', category: 'Tools', tags: ['writing', 'english', 'grammar'], url: '#', starred: false, type: 'tool' },
-  { id: 12, title: '3Blue1Brown', description: 'Beautiful math visualizations and explanations', category: 'Videos', tags: ['math', 'visualization', 'calculus'], url: '#', starred: true, type: 'video' },
+  { id: 1, title: 'Khan Academy', description: 'Free world-class education in math, science, and more', category: 'Courses', tags: ['math', 'science', 'free'], url: 'https://www.khanacademy.org', starred: true, type: 'course' },
+  { id: 2, title: 'MIT OpenCourseWare', description: 'Free lecture notes, exams, and videos from MIT', category: 'Courses', tags: ['engineering', 'science', 'university'], url: 'https://ocw.mit.edu', starred: true, type: 'course' },
+  { id: 3, title: 'Wolfram Alpha', description: 'Computational intelligence for math and science problems', category: 'Tools', tags: ['math', 'calculator', 'problem-solving'], url: 'https://www.wolframalpha.com', starred: false, type: 'tool' },
+  { id: 4, title: 'CrashCourse', description: 'Engaging educational videos on various subjects', category: 'Videos', tags: ['history', 'science', 'literature'], url: 'https://www.youtube.com/c/crashcourse', starred: false, type: 'video' },
+  { id: 5, title: 'Purdue OWL', description: 'Comprehensive writing and citation resources', category: 'Tools', tags: ['writing', 'citations', 'english'], url: 'https://owl.purdue.edu', starred: true, type: 'tool' },
+  { id: 6, title: 'Coursera', description: 'Online courses from top universities worldwide', category: 'Courses', tags: ['various', 'certificates', 'university'], url: 'https://www.coursera.org', starred: false, type: 'course' },
+  { id: 7, title: 'Quizlet', description: 'Create and study flashcards for any subject', category: 'Tools', tags: ['flashcards', 'memorization', 'study'], url: 'https://quizlet.com', starred: true, type: 'tool' },
+  { id: 8, title: 'Google Scholar', description: 'Search academic papers and articles', category: 'Research', tags: ['papers', 'academic', 'research'], url: 'https://scholar.google.com', starred: false, type: 'article' },
+  { id: 9, title: 'Desmos', description: 'Advanced graphing calculator for mathematics', category: 'Tools', tags: ['math', 'graphing', 'visualization'], url: 'https://www.desmos.com/calculator', starred: false, type: 'tool' },
+  { id: 10, title: 'edX', description: 'Free courses from Harvard, MIT, and 160+ institutions', category: 'Courses', tags: ['university', 'free', 'certificates'], url: 'https://www.edx.org', starred: false, type: 'course' },
+  { id: 11, title: 'Grammarly', description: 'AI-powered writing assistant for grammar and style', category: 'Tools', tags: ['writing', 'english', 'grammar'], url: 'https://www.grammarly.com', starred: false, type: 'tool' },
+  { id: 12, title: '3Blue1Brown', description: 'Beautiful math visualizations and explanations', category: 'Videos', tags: ['math', 'visualization', 'calculus'], url: 'https://www.3blue1brown.com', starred: true, type: 'video' },
 ];
 
 const typeColors: Record<string, string> = {
@@ -144,7 +144,13 @@ export default function Resources() {
                   </span>
                 ))}
               </div>
-              <a href={resource.url} className="text-indigo-600 hover:text-indigo-700">
+              <a
+                href={resource.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-600 hover:text-indigo-700 transition-colors"
+                title={`Open ${resource.title}`}
+              >
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>

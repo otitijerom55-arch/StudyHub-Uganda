@@ -246,6 +246,37 @@ export default function Tasks() {
           No tasks match your filters. Try adjusting them or add a new task!
         </div>
       )}
+
+      {/* Productivity Tips */}
+      <div className="mt-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6">
+        <h3 className="font-semibold text-gray-900 mb-3">✅ Task Management Tips</h3>
+        <ul className="space-y-2 text-sm text-gray-600 mb-4">
+          <li>• Break large projects into smaller, manageable tasks</li>
+          <li>• Prioritize using the Eisenhower Matrix (urgent vs. important)</li>
+          <li>• Set realistic deadlines with buffer time</li>
+          <li>• Review and update your task list daily</li>
+        </ul>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://todoist.com/productivity-methods/eisenhower-matrix"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-green-600 hover:text-green-800 font-medium transition-colors"
+          >
+            📖 Eisenhower Matrix guide
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.atlassian.com/time-wasting-at-work-infographic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-green-600 hover:text-green-800 font-medium transition-colors"
+          >
+            ⏱️ Time management tips
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
