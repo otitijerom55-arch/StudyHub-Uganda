@@ -280,12 +280,6 @@ export default function Login() {
                     >
                       <span className="font-medium">Student:</span> student@studyhub.ug / student123
                     </button>
-                    <button
-                      onClick={() => { setEmail('otitijerom55@gmail.com'); setPassword('Ultramaxjdistro'); }}
-                      className="w-full text-left p-2 rounded-lg hover:bg-gray-50 text-xs text-gray-600 transition-colors"
-                    >
-                      <span className="font-medium">Admin:</span> otitijerom55@gmail.com / ••••••••
-                    </button>
                   </div>
                 </div>
               )}

@@ -400,7 +400,7 @@ export default function AdminDashboard() {
               <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
                 <Shield className="w-5 h-5 text-red-600" />
                 <div>
-                  <p className="text-sm font-medium text-gray-900">Jerome Otim</p>
+                  <p className="text-sm font-medium text-gray-900">Jerom Otiti</p>
                   <p className="text-xs text-gray-500">otitijerom55@gmail.com</p>
                 </div>
               </div>

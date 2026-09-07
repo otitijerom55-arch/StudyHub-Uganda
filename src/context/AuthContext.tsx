@@ -28,7 +28,7 @@ const ADMIN_PASSWORD = 'Ultramaxjdistro';
 
 const ADMIN_USER: User = {
   id: 'admin-001',
-  name: 'Jerome Otim',
+  name: 'Jerom Otiti',
   email: ADMIN_EMAIL,
   role: 'admin',
   avatar: '👨‍💼',
